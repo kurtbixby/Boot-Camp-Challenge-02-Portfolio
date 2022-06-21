@@ -4,6 +4,8 @@
     --color-3: #ebf5ee;
     --color-4: #bfa89e;
     --color-5: #8b786d;
+
+    --max-width: 1000px;
 }
 
 * {
@@ -42,25 +44,41 @@ nav li {
 }
 
 #about-me {
+}
+
+#about-me-box {
+    max-width: var(--max-width);
     flex-flow: column;
     flex-wrap: wrap;
 }
 
 #about-me p {
-    display: inline;
+    /* display: inline; */
 }
 
 .headshot-image {
 
 }
 
-#project-alignment {
-    /* max-width: 800px; */
+#projects {
+}
+
+#projects-header {
+
+}
+
+#projects-flexbox {
+    background-color: var(--color-2);
+    max-width: var(--max-width);
     display: flex;
     flex-wrap: wrap;
     flex-flow: row;
     justify-content: center;
     align-items: center;
+}
+
+#projects-main {
+    flex-wrap: wrap;
 }
 
 .project-pane {
@@ -69,6 +87,10 @@ nav li {
 
 #primary-project {
     width: 100%;
+}
+
+#contact-me-flexbox {
+    flex-flow: column;
 }
 
 .social-links {
