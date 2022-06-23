@@ -7,7 +7,7 @@ An exercise to create a portfolio webpage from scratch. Featured functionality i
 
 Demo
 =====
-Here's a live deployed version of the refactored site: [https://kurtbixby.github.io/Boot-Camp-Challenge-02-Portfolio/](https://kurtbixby.github.io/Boot-Camp-Challenge-02-Portfolio/).
+Here's a live deployed version of the created site: [https://kurtbixby.github.io/Boot-Camp-Challenge-02-Portfolio/](https://kurtbixby.github.io/Boot-Camp-Challenge-02-Portfolio/).
 
 Notes
 =====
