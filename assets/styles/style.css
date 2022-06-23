@@ -34,6 +34,7 @@ h3 {
     font-weight: bold;
 }
 
+/* Make navigation links always appear the same color even when clicked */
 a {
     color: var(--color-3);
 }
@@ -42,17 +43,9 @@ a:visited {
     color: var(--color-3);
 }
 
+/* Give nav links a hover color */
 a:hover {
     color: var(--color-4);
-}
-
-.page-header {
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--color-1);
-    z-index: 1;
 }
 
 nav ul {
@@ -69,13 +62,30 @@ nav li {
     margin: 10px;
 }
 
-#about-me {
+footer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Stick the header to the top and put it above others with the z-index */
+.page-header {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-1);
+    z-index: 1;
+}
+
+/* CSS padding for the whole section */
+.about-me {
     padding-top: .5rem;
     padding-bottom: .5rem;
     margin-bottom: .5rem;
 }
 
-#about-me-box {
+/* Flexbox for positioning the elements */
+.about-me-flexbox {
     max-width: var(--max-width);
     flex-flow: column;
     flex-wrap: wrap;
@@ -91,12 +101,18 @@ nav li {
     border-radius: 28%;
 }
 
-#projects-main {
-    background-color: var(--color-3);
+/* CSS for the projects section of the page */
+/* Make a flex box for the header and the actual content */
+.projects-flexbox {
+    display: flex;
     flex-wrap: wrap;
+    flex-flow: row;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-#projects-header {
+/* Right align the header and make it only 10% */
+.projects-header {
     margin-right: 1rem;
     display: flex;
     flex-flow: row;
@@ -105,14 +121,12 @@ nav li {
     margin-top: .5rem;
 }
 
-#projects-flexbox {
-    display: flex;
+.projects-main {
+    background-color: var(--color-3);
     flex-wrap: wrap;
-    flex-flow: row;
-    justify-content: center;
-    align-items: flex-start;
 }
 
+/* Start at 40% and also let other elements be placed absolutely or relative to it */
 .project-pane {
     /* width: 50%; */
     flex: 1 1 40%;
@@ -130,6 +144,7 @@ nav li {
     margin: 1rem;
 }
 
+/* Default to low opacity */
 .project-pane img {
     opacity: 0.4;
     max-width: 100%;
@@ -139,6 +154,7 @@ nav li {
     opacity: 1;
 }
 
+/* Float the title "above" the project and a little bit into it via the absolute positioning */
 .project-title {
     position: absolute;
     bottom: 3rem;
@@ -149,12 +165,13 @@ nav li {
     font-weight: bolder;
 }
 
-#contact-me-flexbox {
+/* Section for the contact links at the bottom of the page */
+.contact-me-flexbox {
     flex-flow: column;
     margin-top: 1.0rem;
 }
 
-#contact-me {
+.contact-me {
     padding: .5rem;
 }
 
@@ -167,6 +184,7 @@ nav li {
     margin: 15px;
 }
 
+/* Misc classes for reused mix-in functionality */
 .flex-center {
     display: flex;
     justify-content: center;
@@ -177,11 +195,7 @@ nav li {
     scroll-margin-top: 3.3rem;
 }
 
-footer {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
+/* Adjustments for mobile screens. Generally making things larger */
 @media screen and (max-width: 992px) {
     a {
         font-size: xx-large;
@@ -192,18 +206,18 @@ footer {
         font-size: xx-large;
     }
     
-    #projects-flexbox {
+    .projects-flexbox {
         flex-flow: column;
     }
 
-    #projects-header {
+    .projects-header {
         justify-content: center;
         width: 100%;
         border-bottom: 2px solid var(--color-1);
         margin-bottom: .5rem;
     }
     
-    #projects-header h2 {
+    .projects-header h2 {
         margin-bottom: .25rem;
     }
 
@@ -216,6 +230,7 @@ footer {
     }
 }
 
+/* Adjustment for VERY narrow screens to make the navigation look better */
 @media screen and (max-width: 576px) {
     nav ul {
         display: flex;
@@ -227,35 +242,5 @@ footer {
     nav li {
         flex: 1 1 30%;
         text-align: center;
-    }
-    
-    a {
-        font-size: xx-large;
-    }
-
-    .bio-text {
-        max-width: 95%;
-        font-size: xx-large;
-    }
-
-    #projects-flexbox {
-        flex-flow: column;
-    }
-
-    #projects-header {
-        justify-content: center;
-        width: 100%;
-    }
-    
-    #projects-header h2 {
-        margin-bottom: .25rem;
-    }
-
-    .project-title {
-        font-size: xx-large;
-    }
-
-    .contact-blurb {
-        font-size: xx-large;
     }
 }
