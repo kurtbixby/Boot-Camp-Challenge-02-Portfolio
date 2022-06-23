@@ -1,20 +1,49 @@
 :root {
-    --color-1: #283044;
-    --color-2: #78a1bb;
-    --color-3: #ebf5ee;
-    --color-4: #bfa89e;
-    --color-5: #8b786d;
+    --color-1: #242F9B;
+    --color-2: #646FD4;
+    --color-3: #9BA3EB;
+    --color-4: #DBDFFD;
 
     --max-width: 1000px;
 }
 
 body {
-    background-color: var(--color-3);
+    background-color: var(--color-4);
     font-family:'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main {
+    max-width: 96%;
+    margin: 0 auto;
     margin-top: 60px;
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 1rem;
+    margin-bottom: .4rem;
+}
+
+h2 {
+    font-size: xx-large;
+}
+
+h3 {
+    font-size: large;
+    font-weight: bold;
+}
+
+a {
+    color: var(--color-3);
+}
+
+a:visited {
+    color: var(--color-3);
+}
+
+a:hover {
+    color: var(--color-4);
 }
 
 .page-header {
@@ -22,7 +51,8 @@ main {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: var(--color-2);
+    background-color: var(--color-1);
+    z-index: 1;
 }
 
 nav ul {
@@ -32,12 +62,15 @@ nav ul {
 
 nav li {
     display: inline;
-    color: var(--color-5);
+    color: var(--color-2);
     font-weight: bolder;
     margin: 20px;
 }
 
 #about-me {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
 }
 
 #about-me-box {
@@ -46,45 +79,106 @@ nav li {
     flex-wrap: wrap;
 }
 
-#about-me p {
-    /* display: inline; */
+.bio-text {
+    max-width: 60%;
+    text-align: center;
+    font-size: large;
 }
 
 .headshot-image {
-
+    border-radius: 28%;
 }
 
 #projects {
 }
 
-#projects-header {
+#projects-main {
+    background-color: var(--color-3);
+    flex-wrap: wrap;
+}
 
+#projects-header {
+    margin-right: 1rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    flex: 0 0 10%;
+    margin-top: .5rem;
 }
 
 #projects-flexbox {
-    background-color: var(--color-2);
-    max-width: var(--max-width);
+    /* background-color: var(--color-3); */
+    /* max-width: var(--max-width); */
     display: flex;
     flex-wrap: wrap;
     flex-flow: row;
     justify-content: center;
-    align-items: center;
-}
-
-#projects-main {
-    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .project-pane {
     width: 50%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+}
+
+.project-pane a {
+    margin: 1rem;
+}
+
+.project-pane img {
+    opacity: 0.4;
+    max-width: 100%;
+}
+
+.project-pane:hover img{
+    opacity: 1;
+}
+
+.project-pane:hover .hover-text {
+    display: block;
+}
+
+.project-pane .project-title {
+    position: absolute;
+    bottom: 3rem;
+    left: .8rem;
+    background-color: var(--color-2);
+    padding: 2%;
+    box-shadow: 2px 4px 3px black;
+}
+
+.hover-text {
+    display: none;
+    position: absolute;
+    top: 50%;
+    max-width: 75%;
+    margin: 0 auto;
+    color: var(--color-1);
+
+    padding: 5px;
+    background-color: var(--color-2);
+    text-align: center;
 }
 
 .featured-project {
     width: 100%;
 }
 
+*:target::before {
+    margin-top: 60px;
+    visibility: none;
+}
+
 #contact-me-flexbox {
     flex-flow: column;
+    margin-top: 1.0rem;
+}
+
+#contact-me {
+    padding: .5rem;
 }
 
 .social-links {
@@ -100,4 +194,49 @@ nav li {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.link-target {
+    scroll-margin-top: 2rem;
+}
+
+footer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 992px) {
+    #about-me p {
+        max-width: 80%;
+    }
+    
+    #projects-flexbox {
+        flex-flow: column;
+    }
+
+    #projects-header {
+        justify-content: center;
+        width: 100%;
+        border-bottom: 2px solid var(--color-1);
+        margin-bottom: .5rem;
+    }
+    
+    #projects-header h2 {
+        margin-bottom: .25rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #about-me p {
+        max-width: 80%;
+    }
+
+    #projects-flexbox {
+        flex-flow: column;
+    }
+
+    #projects-header {
+        justify-content: center;
+        width: 100%;
+    }
 }
