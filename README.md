@@ -11,7 +11,7 @@ Here's a live deployed version of the refactored site: [https://kurtbixby.github
 
 Notes
 =====
-Favicon created on [favicon.io](https://favicon.io).
+Favicon created on [favicon.io](https://favicon.io).<br>
 Email icon sourced from [icons8.com](https://icons8.com).
 
 Credits
