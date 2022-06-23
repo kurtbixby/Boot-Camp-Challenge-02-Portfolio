@@ -89,9 +89,6 @@ nav li {
     border-radius: 28%;
 }
 
-#projects {
-}
-
 #projects-main {
     background-color: var(--color-3);
     flex-wrap: wrap;
@@ -107,8 +104,6 @@ nav li {
 }
 
 #projects-flexbox {
-    /* background-color: var(--color-3); */
-    /* max-width: var(--max-width); */
     display: flex;
     flex-wrap: wrap;
     flex-flow: row;
@@ -117,11 +112,16 @@ nav li {
 }
 
 .project-pane {
-    width: 50%;
+    /* width: 50%; */
+    flex: 1 1 40%;
     position: relative;
 
     display: flex;
     justify-content: center;
+}
+
+.featured-project {
+    flex-basis: 100%;
 }
 
 .project-pane a {
@@ -137,39 +137,14 @@ nav li {
     opacity: 1;
 }
 
-.project-pane:hover .hover-text {
-    display: block;
-}
-
-.project-pane .project-title {
+.project-title {
     position: absolute;
     bottom: 3rem;
     left: .8rem;
     background-color: var(--color-2);
     padding: 2%;
     box-shadow: 2px 4px 3px black;
-}
-
-.hover-text {
-    display: none;
-    position: absolute;
-    top: 50%;
-    max-width: 75%;
-    margin: 0 auto;
-    color: var(--color-1);
-
-    padding: 5px;
-    background-color: var(--color-2);
-    text-align: center;
-}
-
-.featured-project {
-    width: 100%;
-}
-
-*:target::before {
-    margin-top: 60px;
-    visibility: none;
+    font-weight: bolder;
 }
 
 #contact-me-flexbox {
@@ -206,8 +181,13 @@ footer {
 }
 
 @media screen and (max-width: 992px) {
-    #about-me p {
-        max-width: 80%;
+    a {
+        font-size: xx-large;
+    }
+
+    .bio-text {
+        max-width: 95%;
+        font-size: xx-large;
     }
     
     #projects-flexbox {
@@ -224,11 +204,24 @@ footer {
     #projects-header h2 {
         margin-bottom: .25rem;
     }
+
+    .project-title {
+        font-size: xx-large;
+    }
+
+    .contact-blurb {
+        font-size: xx-large;
+    }
 }
 
 @media screen and (max-width: 576px) {
-    #about-me p {
-        max-width: 80%;
+    a {
+        font-size: xx-large;
+    }
+
+    .bio-text {
+        max-width: 95%;
+        font-size: xx-large;
     }
 
     #projects-flexbox {
@@ -238,5 +231,17 @@ footer {
     #projects-header {
         justify-content: center;
         width: 100%;
+    }
+    
+    #projects-header h2 {
+        margin-bottom: .25rem;
+    }
+
+    .project-title {
+        font-size: xx-large;
+    }
+
+    .contact-blurb {
+        font-size: xx-large;
     }
 }
